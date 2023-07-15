@@ -1,0 +1,161 @@
+/*
+            First step is to understand the HTML file properly 
+        Understand the button and icon usage in HTML and then proceed
+
+    Starting with CSS:
+    Start by removing the margin and the padding in the document and making the default font as Poppins
+    This font is taken by goggle fonts website 
+    Copy the links in our html codes
+    
+    Add background image to the website 
+    To make the image visible to the complete page we use viewport height 
+    Make the background size as cover
+
+    Then we start making changes with our hamburger menu icon
+    we make it bigger , bolder and white in color . We also set the position of this button
+
+    Now we style our sidebar menu 
+    we make it outside the sceen so that when we check the box we have a slide in effect 
+    and we make the color white or make a box shadow around it 
+
+    Then we style our logo similarly and the anchor tag inside it 
+    After that we style our menu bar
+
+
+    Color theory
+    Try using monochromatic colors
+    Use contrasting shades for better readability
+
+    If we want high contrast then we use tradic or complementary shades
+
+    For portfolio website we use Times new Roman , Roboto , Calibri etc
+    Also try using 1 or max 2 fonts in the design
+
+    There is a font library called google fonts which we use to select our fonts
+*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family:'Poppins','sans-serif';
+}
+
+.main_box{
+    background:url(photo.jpg);
+    height: 100vh;
+    background-size: cover;
+}
+
+.btn_one i{
+    color:white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 25px;
+    position: absolute;
+    left: 16px;
+    line-height: 60px;
+    transition: all 0.25s linear;
+}
+
+.sidebar_menu{
+    position: fixed;
+    left:-300px;     /*Making it outside the screen*/
+    height: 100vh;
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.5);
+    transition: all 0.25s linear;
+}
+
+.sidebar_menu .logo{
+    position: absolute; 
+    width: 100%;
+    line-height: 60px;
+    box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.5);
+    height: 60px;
+}
+
+
+.sidebar_menu .btn_two i{
+    color: gray;
+    position: absolute;
+    left: 230px;
+    line-height: 60px;
+    font-size: 20px;
+    /* opacity: 0; */
+    cursor: pointer;
+    transition: all 0.25s linear;
+}
+
+.sidebar_menu .menu{
+    position: absolute;
+    top: 70px;
+    width:100%;
+
+}
+
+.sidebar_menu .logo a{
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    position: absolute;
+    left: 45px;
+    text-decoration: none;
+}
+
+.sidebar_menu .menu li{
+    margin-top: 8px;
+    padding:12px 20px;
+    
+}
+
+.sidebar_menu .menu i,a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.sidebar_menu .menu i{
+    padding-right: 10px;
+}
+
+.sidebar_menu .social_media {
+    position: absolute;
+    left:20%;
+    top: 90%;
+}
+
+.sidebar_menu .social_media i{
+    opacity: 0.5;
+    padding:5px;
+}
+
+#check{
+    display: none;
+}
+
+.sidebar_menu .menu li:hover{
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);   
+    font-size: 30px;
+}
+
+.btn_one i:hover{
+    font-size: 35px;
+}
+.sidebar_menu .btn_two i:hover{
+    font-size: 30px;
+}
+
+.sidebar_menu .social_media i:hover{
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
+    color: rgba(255,255,255, 1);
+    transform: scale(1.5);
+}
+
+#check:checked ~.sidebar_menu{
+    left: 0px;
+}
+
+#check:checked ~.btn_one{
+    opacity: 0;
+}
